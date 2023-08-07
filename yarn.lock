@@ -1033,6 +1033,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nestjs/schedule@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@nestjs/schedule@npm:3.0.2"
+  dependencies:
+    cron: 2.4.0
+    uuid: 9.0.0
+  peerDependencies:
+    "@nestjs/common": ^8.0.0 || ^9.0.0 || ^10.0.0
+    "@nestjs/core": ^8.0.0 || ^9.0.0 || ^10.0.0
+    reflect-metadata: ^0.1.12
+  checksum: 3630ed47769908527596e7e20382f31993338e47a0582d5311969fb8d5daf6d8801add4940d0ad9ac0d9f8c846c26ec66bbf3223c67cabffcf16a1c83a7d5e6e
+  languageName: node
+  linkType: hard
+
 "@nestjs/schematics@npm:^9.0.0, @nestjs/schematics@npm:^9.0.4":
   version: 9.1.0
   resolution: "@nestjs/schematics@npm:9.1.0"
@@ -1177,21 +1191,6 @@ __metadata:
     "@sentry/utils": 7.60.0
     tslib: ^2.4.1 || ^1.9.3
   checksum: ebd60aea46ca4317303ddb6ee4d6d440fd1b6c936a7c30081944d6197406a13465c7211a1490f199f2b5c51c2de51e5e6471a082990891150fcbeedc28c6464e
-  languageName: node
-  linkType: hard
-
-"@sentry/cli@npm:latest":
-  version: 2.20.0
-  resolution: "@sentry/cli@npm:2.20.0"
-  dependencies:
-    https-proxy-agent: ^5.0.0
-    node-fetch: ^2.6.7
-    progress: ^2.0.3
-    proxy-from-env: ^1.1.0
-    which: ^2.0.2
-  bin:
-    sentry-cli: bin/sentry-cli
-  checksum: 7ad32ecec015233b2aa823ed0a4a3d5f76bd2d91ae8cc43ab3f9a9c03359b05bae145f53e3dfb3504ae873479f703fec72de64e564aa43c5cc33847ce72f83b3
   languageName: node
   linkType: hard
 
@@ -1393,6 +1392,15 @@ __metadata:
   version: 2.1.2
   resolution: "@types/cookiejar@npm:2.1.2"
   checksum: f6e1903454007f86edd6c3520cbb4d553e1d4e17eaf1f77f6f75e3270f48cc828d74397a113a36942f5fe52f9fa71067bcfa738f53ad468fcca0bc52cb1cbd28
+  languageName: node
+  linkType: hard
+
+"@types/cron@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "@types/cron@npm:2.4.0"
+  dependencies:
+    cron: "*"
+  checksum: c763e99a757ea76aee435948c25e0bdaf32ec44c69603088c73e8832df6b121e87932709925fe3e94777833ca30845c31df1167be54c330cf458d348059b9ffc
   languageName: node
   linkType: hard
 
@@ -2930,6 +2938,15 @@ __metadata:
   version: 1.1.1
   resolution: "create-require@npm:1.1.1"
   checksum: a9a1503d4390d8b59ad86f4607de7870b39cad43d929813599a23714831e81c520bddf61bcdd1f8e30f05fd3a2b71ae8538e946eb2786dc65c2bbc520f692eff
+  languageName: node
+  linkType: hard
+
+"cron@npm:*, cron@npm:2.4.0":
+  version: 2.4.0
+  resolution: "cron@npm:2.4.0"
+  dependencies:
+    luxon: ^3.2.1
+  checksum: e1dfc2d2a8cfdee0c17daac791074d904b8d7ecdcd3cf9ca969f8efb00371113d1eb69d60fdebb9e94ac5b3bb3e904a7e687a2fcd276ffdb1f0381e8b6df26bd
   languageName: node
   linkType: hard
 
@@ -5226,6 +5243,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"luxon@npm:^3.2.1":
+  version: 3.3.0
+  resolution: "luxon@npm:3.3.0"
+  checksum: 50cf17a0dc155c3dcacbeae8c0b7e80db425e0ba97b9cbdf12a7fc142d841ff1ab1560919f033af46240ed44e2f70c49f76e3422524c7fc8bb8d81ca47c66187
+  languageName: node
+  linkType: hard
+
 "macos-release@npm:^2.5.0":
   version: 2.5.1
   resolution: "macos-release@npm:2.5.1"
@@ -5661,12 +5685,13 @@ __metadata:
     "@nestjs/config": ^2.3.1
     "@nestjs/core": ^9.0.0
     "@nestjs/platform-express": ^9.0.0
+    "@nestjs/schedule": ^3.0.2
     "@nestjs/schematics": ^9.0.0
     "@nestjs/swagger": ^6.2.1
     "@nestjs/testing": ^9.0.0
     "@nestjs/typeorm": ^9.0.1
-    "@sentry/cli": latest
     "@sentry/node": ^7.60.0
+    "@types/cron": ^2.4.0
     "@types/express": ^4.17.13
     "@types/jest": 28.1.8
     "@types/node": ^16.0.0
@@ -5738,20 +5763,6 @@ __metadata:
     encoding:
       optional: true
   checksum: acb04f9ce7224965b2b59e71b33c639794d8991efd73855b0b250921382b38331ffc9d61bce502571f6cc6e11a8905ca9b1b6d4aeb586ab093e2756a1fd190d0
-  languageName: node
-  linkType: hard
-
-"node-fetch@npm:^2.6.7":
-  version: 2.6.12
-  resolution: "node-fetch@npm:2.6.12"
-  dependencies:
-    whatwg-url: ^5.0.0
-  peerDependencies:
-    encoding: ^0.1.0
-  peerDependenciesMeta:
-    encoding:
-      optional: true
-  checksum: 3bc1655203d47ee8e313c0d96664b9673a3d4dd8002740318e9d27d14ef306693a4b2ef8d6525775056fd912a19e23f3ac0d7111ad8925877b7567b29a625592
   languageName: node
   linkType: hard
 
@@ -6186,13 +6197,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"progress@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "progress@npm:2.0.3"
-  checksum: f67403fe7b34912148d9252cb7481266a354bd99ce82c835f79070643bb3c6583d10dbcfda4d41e04bbc1d8437e9af0fb1e1f2135727878f5308682a579429b7
-  languageName: node
-  linkType: hard
-
 "promise-inflight@npm:^1.0.1":
   version: 1.0.1
   resolution: "promise-inflight@npm:1.0.1"
@@ -6227,13 +6231,6 @@ __metadata:
     forwarded: 0.2.0
     ipaddr.js: 1.9.1
   checksum: 29c6990ce9364648255454842f06f8c46fcd124d3e6d7c5066df44662de63cdc0bad032e9bf5a3d653ff72141cc7b6019873d685708ac8210c30458ad99f2b74
-  languageName: node
-  linkType: hard
-
-"proxy-from-env@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "proxy-from-env@npm:1.1.0"
-  checksum: ed7fcc2ba0a33404958e34d95d18638249a68c430e30fcb6c478497d72739ba64ce9810a24f53a7d921d0c065e5b78e3822759800698167256b04659366ca4d4
   languageName: node
   linkType: hard
 
